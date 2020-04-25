@@ -1,6 +1,8 @@
 package _01_introduction_to_encapsulation;
 
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
@@ -55,7 +57,8 @@ public void testmemberOb() {
 		obj.setmemberOb(1);
 		assertEquals(1, obj.getmemberOb());
 		obj.setmemberOb("bob");
-		assertEquals( (Object) obj.getmemberOb(), obj.getmemberOb());
+		Object ob1 = obj.getmemberOb();
+		assertFalse(ob1 instanceof String);
 	}catch(Exception e) {
 		e.printStackTrace();
 	}

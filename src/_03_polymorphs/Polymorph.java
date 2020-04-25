@@ -3,8 +3,8 @@ package _03_polymorphs;
 import java.awt.Graphics;
 
 public abstract class Polymorph {
-    int x;
-    int y;
+   protected int x;
+   protected int y;
     
     Polymorph(int x, int y){
    	 this.x = x;
@@ -12,8 +12,21 @@ public abstract class Polymorph {
     }
     
     public void update(){
+   
+    
    	 
     }
-    
+    public void setx(int x) {
+    	this.x = x;
+    }
+    int getx() {
+    	return this.x;
+    }
+    public void sety(int y) {
+    	this.y=y;
+    }
+    int gety() {
+    	return this.y;
+    }
     public abstract void draw(Graphics g);
 }
