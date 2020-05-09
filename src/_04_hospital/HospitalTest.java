@@ -3,6 +3,7 @@ package _04_hospital;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.w3c.dom.DOMException;
 
 import java.util.List;
 
@@ -32,8 +33,9 @@ public class HospitalTest extends TestCase {
 		testHospital.addPatient(new Patient());
 		assertEquals(3, testHospital.getPatients().size());
 	}
-
+	
 	/* Fix asserts one at a time */
+	
 	public void testDoctorsHaveSpecialties() throws Exception {
 		Doctor testDoctor = new Doctor();
 		assertEquals(false, testDoctor.performsSurgery());
@@ -89,7 +91,8 @@ public class HospitalTest extends TestCase {
 		try {
 			testDoctor.assignPatient(new Patient());
 			assertTrue(false);
-		} catch (DoctorFullException dfe) {
+			//was orignally DoctorFullException
+		} catch (Exception dfe) {
 			assertTrue(true);
 		}
 assertTrue(testDoctor.getPatients().size() == 3);
@@ -108,7 +111,6 @@ assertTrue(testDoctor.getPatients().size() == 3);
 		assertEquals(3, testDoctors.get(1).getPatients().size());
 		assertEquals(2, testDoctors.get(2).getPatients().size());
 	}
-
 
 
 }
