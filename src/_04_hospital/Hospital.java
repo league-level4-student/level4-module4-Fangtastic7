@@ -27,6 +27,13 @@ public class Hospital {
 		return plist;
 	}
 
+	public void assignPatientsToDoctors() {
+		// TODO Auto-generated method stub
+		for(Doctor doctor : doctorlist) {
+			doctor.assignPatient(plist);
+		}
+	}
+
 	
 
 	
