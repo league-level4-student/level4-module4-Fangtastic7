@@ -27,11 +27,21 @@ public class Hospital {
 		return plist;
 	}
 
-	public void assignPatientsToDoctors() {
+	public void assignPatientsToDoctors() throws DoctorFullException {
 		// TODO Auto-generated method stub
-		for(Doctor doctor : doctorlist) {
-			doctor.assignPatient(plist);
+	int doctorindex = 0;
+		for(int i = 0; i< plist.size();i++) {
+			try {
+				doctorlist.get(doctorindex).assignPatient(plist.get(i));
+			} catch(DoctorFullException e) {
+			doctorindex++;	
+			i--;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			
 		}
+		
 	}
 
 	
